@@ -6,11 +6,12 @@ public class Boat extends Vehicle {
         super(make, model, propulsionSystem);
     }
 
-    @Override
-    public void start() {
-        System.out.println("Boat is starting.");
-        ignitePropulsionSystem();
-    }
+    // Not necessary to override/reimplement if not needed
+    // @Override
+    // public void start() {
+    //     System.out.println("Boat is starting.");
+    //     ignitePropulsionSystem();
+    // }
 
     @Override
     public void accelerate() {

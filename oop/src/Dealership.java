@@ -19,7 +19,7 @@ public class Dealership {
         car.accelerate();
         car.move();
 
-        // Create a car with a CombustionEngine propulsion system
+        // Create a boat with a CombustionEngine propulsion system
         PropulsionSystem boatEngine = new CombustionEngine(200.0f);
         // Can refernce the boat using it's superclass (parent) because a Boat is a Vehicle
         Vehicle boat = new Boat("SeaRay", "Sundancer", boatEngine);

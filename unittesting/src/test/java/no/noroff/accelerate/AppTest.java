@@ -22,7 +22,7 @@ public class AppTest {
     public void testSomeMethod_noExeptionThrown() {
         App app = new App();
         // Make sure no exception is thrown
-        // Nullpoitner exception is handled in method (try/catch)
+        // Nullpointer exception is handled in method (try/catch)
         assertDoesNotThrow(() -> {
             app.someMethod(null);
         });

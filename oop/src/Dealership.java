@@ -14,7 +14,7 @@ public class Dealership {
         // Car doesn't care about the implementation, it knows that a PropulsionSystem
         // has methods to iginite, get effect etc.
         PropulsionSystem carEngine = new WarpEngine(300.0f);
-        Car car = new Car("Toyota", "Camry", carEngine);
+        Vehicle car = new Car("Toyota", "Camry", carEngine);
         car.start();
         car.accelerate();
         car.move();

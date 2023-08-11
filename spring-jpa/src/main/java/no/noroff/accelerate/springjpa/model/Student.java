@@ -23,31 +23,30 @@ public class Student {
 
     @Id
     @Column(name = "stud_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Use auto-incremented column in the database
     private int id;
 
-    @Column(name = "stud_name", nullable = false, length = 50)
+    @Column(name = "stud_name", length = 50, nullable = false)
     private String name;
 
-    @Column(name = "date_of_birth", nullable = false)
+    @Column(name = "date_of_birth", length = 15)
     private LocalDate birthday;
 
     @Column(name = "stud_type", length = 15)
     @Enumerated(EnumType.STRING)
-    private StudentType type;
-
-    @OneToOne
-    @JoinColumn(name = "project_id")
-    private Project project;
+    private StudentType studentType;
 
     @ManyToOne
     @JoinColumn(name = "supervisor_id")
     private Professor professor;
+
+    @OneToOne
+    @JoinColumn(name = "project_id")
+    private Project project;
 
     @ManyToMany
     private Set<Subject> subjects;
 
     @Transient
     private String nickName; // Will not be persisted
-
 }

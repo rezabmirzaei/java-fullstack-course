@@ -4,8 +4,12 @@ import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,13 +17,18 @@ import jakarta.persistence.Table;
 public class Subject {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, length = 5)
+    @Column(length = 6, nullable = false)
     private String code;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100, nullable = false)
     private String title;
+
+    @ManyToOne
+    @JoinColumn(name = "lecturer_id")
+    private Professor professor;
 
     @ManyToMany(mappedBy = "subjects")
     private Set<Student> students;

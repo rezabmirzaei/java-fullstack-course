@@ -7,12 +7,15 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_student")
@@ -20,6 +23,7 @@ public class Student {
 
     @Id
     @Column(name = "stud_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "stud_name", nullable = false, length = 50)
@@ -42,5 +46,8 @@ public class Student {
 
     @ManyToMany
     private Set<Subject> subjects;
+
+    @Transient
+    private String nickName; // Will not be persisted
 
 }

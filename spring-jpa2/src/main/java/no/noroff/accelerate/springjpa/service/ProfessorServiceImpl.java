@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +17,7 @@ public class ProfessorServiceImpl implements ProfessorService {
     private final Logger logger = LoggerFactory.getLogger(ProfessorServiceImpl.class);
     private final ProfessorRepository professorRepository;
 
+    @Autowired
     public ProfessorServiceImpl(ProfessorRepository professorRepository) {
         this.professorRepository = professorRepository;
     }

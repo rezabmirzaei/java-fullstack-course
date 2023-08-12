@@ -1,13 +1,13 @@
-package no.noroff.accelerate.springjpa2;
+package no.noroff.accelerate.springjpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringJpa2Application {
+public class SpringJpaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringJpa2Application.class, args);
+		SpringApplication.run(SpringJpaApplication.class, args);
 	}
 
 }

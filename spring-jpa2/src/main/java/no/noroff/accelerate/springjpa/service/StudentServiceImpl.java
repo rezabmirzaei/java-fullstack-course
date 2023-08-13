@@ -2,8 +2,6 @@ package no.noroff.accelerate.springjpa.service;
 
 import java.util.Collection;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +12,6 @@ import no.noroff.accelerate.springjpa.repository.StudentRepository;
 public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository studentRepository;
-    private final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
 
     @Autowired
     public StudentServiceImpl(StudentRepository studentRepository) {
@@ -23,7 +20,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student findById(Integer id) {
-        logger.info(String.format("Getting student with id %s", id));
         return studentRepository.findById(id).get();
     }
 

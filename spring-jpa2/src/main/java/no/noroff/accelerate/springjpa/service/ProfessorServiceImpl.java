@@ -2,8 +2,6 @@ package no.noroff.accelerate.springjpa.service;
 
 import java.util.Collection;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +12,6 @@ import no.noroff.accelerate.springjpa.repository.ProfessorRepository;
 @Service
 public class ProfessorServiceImpl implements ProfessorService {
 
-    private final Logger logger = LoggerFactory.getLogger(ProfessorServiceImpl.class);
     private final ProfessorRepository professorRepository;
 
     @Autowired
@@ -31,8 +28,9 @@ public class ProfessorServiceImpl implements ProfessorService {
             prof.getStudents().forEach(s -> s.setProfessor(null));
             prof.getSubjects().forEach(s -> s.setProfessor(null));
             professorRepository.delete(prof);
-        } else
-            logger.warn("No professor exists with ID: " + id);
+        } else {
+            System.out.println("No professor exists with ID: " + id);
+        }
     }
 
     @Override

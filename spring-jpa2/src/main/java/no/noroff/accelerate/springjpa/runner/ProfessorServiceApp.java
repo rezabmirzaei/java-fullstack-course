@@ -18,7 +18,8 @@ public class ProfessorServiceApp implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("\n>>> ProfessorService.deleteById():\n");
-        professorService.deleteById(2);
+        professorService.deleteById(999); // No professor
+        // professorService.deleteById(2);
         System.out.println();
     }
 }

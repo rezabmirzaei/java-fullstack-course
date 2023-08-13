@@ -12,15 +12,15 @@ import no.noroff.accelerate.springjpa.model.Student;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
 
-    @Query("select s from Student s where s.name like %?1%")
+    @Query("SELECT s FROM Student s WHERE s.name LIKE %?1%")
     Set<Student> findAllByName(String name);
 
     @Modifying
-    @Query("update Student s set s.professor.id = ?2 where s.id = ?1")
+    @Query("UPDATE Student s SET s.professor.id = ?2 WHERE s.id = ?1")
     void updateProfessorById(int studentId, int professorId);
 
     @Modifying
-    @Query("update Student s set s.project.id = ?2 where s.id = ?1")
+    @Query("UPDATE Student s SET s.project.id = ?2 WHERE s.id = ?1")
     void updateProjectById(int studentId, int professorId);
 
 }

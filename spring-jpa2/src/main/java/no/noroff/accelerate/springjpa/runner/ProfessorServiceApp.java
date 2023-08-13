@@ -10,11 +10,11 @@ import no.noroff.accelerate.springjpa.model.Professor;
 import no.noroff.accelerate.springjpa.service.ProfessorService;
 
 @Component
-public class ProfessorApp implements ApplicationRunner {
+public class ProfessorServiceApp implements ApplicationRunner {
 
     private final ProfessorService professorService;
 
-    public ProfessorApp(ProfessorService professorService) {
+    public ProfessorServiceApp(ProfessorService professorService) {
         this.professorService = professorService;
     }
 

@@ -9,22 +9,23 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import no.noroff.accelerate.springjpa.model.Student;
-import no.noroff.accelerate.springjpa.service.StudentService;
+import no.noroff.accelerate.springjpa.repository.StudentRepository;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE) // Use to order multiple ApplicationRunners in same project
-public class StudentApp implements ApplicationRunner {
+public class StudentRepositoryApp implements ApplicationRunner {
 
-    private final StudentService studentService;
+    private final StudentRepository studentRepository;
 
-    public StudentApp(StudentService studentService) {
-        this.studentService = studentService;
+    public StudentRepositoryApp(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Collection<Student> students = studentService.findAll();
+        System.out.println("\n>>> StudentRepository.findAll():\n");
+        Collection<Student> students = studentRepository.findAll();
         students.stream().forEach(stud -> System.out.println(stud.getName()));
-        // professorService.deleteById(1);
+        System.out.println();
     }
 }

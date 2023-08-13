@@ -1,11 +1,13 @@
 package no.noroff.accelerate.springjpa.service;
 
 import java.util.Collection;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import no.noroff.accelerate.springjpa.model.Student;
+import no.noroff.accelerate.springjpa.model.Subject;
 import no.noroff.accelerate.springjpa.repository.StudentRepository;
 
 @Service
@@ -51,6 +53,11 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void setProject(int studentId, int projectId) {
         studentRepository.updateProjectById(studentId, projectId);
+    }
+
+    @Override
+    public Set<Subject> getSubjects(int studentId) {
+        return studentRepository.findById(studentId).get().getSubjects();
     }
 
     @Override

@@ -23,8 +23,8 @@ public class StudentRepositoryApp implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println("\n>>> StudentRepository.findAll():\n");
-        Collection<Student> students = studentRepository.findAll();
+        System.out.println("\n>>> StudentRepository.findAllByName():\n");
+        Collection<Student> students = studentRepository.findAllByName("Frida");
         students.stream().forEach(stud -> System.out.println(stud.getName()));
         System.out.println();
     }

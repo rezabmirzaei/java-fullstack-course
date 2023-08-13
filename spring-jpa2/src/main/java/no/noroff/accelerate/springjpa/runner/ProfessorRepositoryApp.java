@@ -20,7 +20,9 @@ public class ProfessorRepositoryApp implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        System.out.println("\n>>> ProfessorRepository.findAll():\n");
         Collection<Professor> professors = professorRepository.findAll();
         professors.stream().forEach(prof -> System.out.println(prof.getName()));
+        System.out.println();
     }
 }

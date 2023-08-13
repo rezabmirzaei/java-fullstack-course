@@ -1,12 +1,9 @@
 package no.noroff.accelerate.springjpa.runner;
 
-import java.util.Collection;
-
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import no.noroff.accelerate.springjpa.model.Professor;
 import no.noroff.accelerate.springjpa.service.ProfessorService;
 
 @Component
@@ -20,8 +17,8 @@ public class ProfessorServiceApp implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Collection<Professor> professors = professorService.findAll();
-        professors.stream().forEach(prof -> System.out.println(prof.getName()));
-        // professorService.deleteById(1);
+        System.out.println("\n>>> ProfessorService.deleteById():\n");
+        professorService.deleteById(2);
+        System.out.println();
     }
 }

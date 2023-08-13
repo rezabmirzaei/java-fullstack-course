@@ -20,7 +20,7 @@ public class StudentServiceApp implements ApplicationRunner {
     }
 
     @Override
-    @Transactional
+    @Transactional // Needed to handle lazy loading issues with subjects
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("\n>>> StudentService.getSubjects(int studentId):\n");
         Set<Subject> subjects = studentService.getSubjects(2);

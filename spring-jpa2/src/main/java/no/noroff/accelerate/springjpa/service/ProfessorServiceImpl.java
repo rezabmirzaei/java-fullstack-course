@@ -22,6 +22,11 @@ public class ProfessorServiceImpl implements ProfessorService {
     @Override
     @Transactional
     public void deleteById(Integer id) {
+
+        // This will fail because it violates foreign key constraints 
+        // Professor prof = professorRepository.findById(id).get();
+        // professorRepository.delete(prof);
+
         if (professorRepository.existsById(id)) {
             // Set relationships to null so we can delete without referential problems
             Professor prof = professorRepository.findById(id).get();

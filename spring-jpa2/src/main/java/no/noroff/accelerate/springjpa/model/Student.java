@@ -31,6 +31,7 @@ public class Student {
     private Professor professor;
 
     @ManyToMany
+    // @ManyToMany(fetch = FetchType.EAGER) // Don't really want this until needed
     @JoinTable(name = "student_subject", joinColumns = { @JoinColumn(name = "student_id") }, inverseJoinColumns = {
             @JoinColumn(name = "subject_id") })
     private Set<Subject> subjects;

@@ -1,4 +1,4 @@
-package com.example.demo10.controller;
+package com.example.accelerate.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

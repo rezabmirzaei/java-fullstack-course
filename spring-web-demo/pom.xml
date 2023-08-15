@@ -9,11 +9,11 @@
 		<version>3.1.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>demo10</artifactId>
+	<groupId>no.noroff.accelerate</groupId>
+	<artifactId>spring-web-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo10</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spring-web-demo</name>
+	<description>Demo project for Spring Boot Web and OpenAPI</description>
 	<properties>
 		<java.version>20</java.version>
 	</properties>

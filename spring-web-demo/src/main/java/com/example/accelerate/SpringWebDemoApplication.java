@@ -1,4 +1,4 @@
-package com.example.demo10;
+package com.example.accelerate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

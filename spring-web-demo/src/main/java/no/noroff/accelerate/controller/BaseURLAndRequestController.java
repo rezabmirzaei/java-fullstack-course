@@ -1,4 +1,4 @@
-package com.example.accelerate.controller;
+package no.noroff.accelerate.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.example.accelerate.controller;
+package no.noroff.accelerate.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

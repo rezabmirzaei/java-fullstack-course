@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,6 +44,12 @@ public class StudentController {
         Student stud = studentService.add(student);
         URI location = URI.create("students/" + stud.getId());
         return ResponseEntity.created(location).build();
+    }
+
+    @DeleteMapping("{id}") // DELETE: localhost:8080/api/v1/students/1
+    public ResponseEntity<Student> delete(@PathVariable int id) {
+        studentService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

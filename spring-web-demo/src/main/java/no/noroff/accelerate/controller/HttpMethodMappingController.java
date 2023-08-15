@@ -3,6 +3,7 @@ package no.noroff.accelerate.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +46,13 @@ public class HttpMethodMappingController {
     @RequestMapping(method = RequestMethod.GET, path = "baz") // GET: localhost:8080/baz
     public ResponseEntity<String> baz() {
         return ResponseEntity.ok().body("Baz!");
+    }
+
+    @Operation(summary = "Create a new Foo", description = "Creates a new Foo entity")
+    @PostMapping("foo") // POST: localhost:8080/baz
+    @ApiResponse(responseCode = "201", description = "Foo created successfully")
+    public ResponseEntity<String> createFoo() {
+        return new ResponseEntity<>("Foo created!", HttpStatus.CREATED);
     }
 
 }

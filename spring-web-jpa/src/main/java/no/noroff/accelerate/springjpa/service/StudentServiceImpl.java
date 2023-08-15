@@ -6,6 +6,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import no.noroff.accelerate.springjpa.exception.StudentNotFoundException;
 import no.noroff.accelerate.springjpa.model.Student;
 import no.noroff.accelerate.springjpa.model.Subject;
 import no.noroff.accelerate.springjpa.repository.StudentRepository;
@@ -22,7 +23,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student findById(Integer id) {
-        return studentRepository.findById(id).get();
+        return studentRepository.findById(id)
+                .orElseThrow(() -> new StudentNotFoundException(id));
     }
 
     @Override

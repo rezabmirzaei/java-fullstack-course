@@ -51,8 +51,8 @@ public class HttpMethodMappingController {
     }
 
     @Operation(summary = "Create a new Foo", description = "Creates a new Foo entity")
-    @PostMapping("foo") // POST: localhost:8080/baz
     @ApiResponse(responseCode = "201", description = "Foo created successfully")
+    @PostMapping("foo") // POST: localhost:8080/foo
     public ResponseEntity<String> createFoo() {
         return new ResponseEntity<>("Foo created!", HttpStatus.CREATED);
     }

@@ -26,13 +26,13 @@ public class BaseURLAndRequestController {
     }
 
     // Extracts the User-Agent header
-    @GetMapping("header") // GET: localhost:8080/api/v1/header
+    @GetMapping("header") // GET: localhost:8080/api/v1/test/header
     public ResponseEntity<String> headers(@RequestHeader("User-Agent") String agent) {
         return ResponseEntity.ok().body(agent);
     }
 
     // Extracts the body
-    @GetMapping("body") // GET: localhost:8080/api/v1/body
+    @GetMapping("body") // GET: localhost:8080/api/v1/test/body
     public ResponseEntity<String> body(@RequestBody String value) {
         return ResponseEntity.ok().body(value);
     }

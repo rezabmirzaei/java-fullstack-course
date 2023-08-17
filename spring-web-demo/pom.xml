@@ -15,7 +15,7 @@
 	<name>spring-web-demo</name>
 	<description>Demo project for Spring Boot Web and OpenAPI</description>
 	<properties>
-		<java.version>20</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 

@@ -21,8 +21,9 @@ CMD ["java", "-jar", "demo.jar"]
 ### For Gradle, replace _Stage 1_ with
 
 ```
+## Stage 1: Build the application using Gradle
 # https://hub.docker.com/_/gradle/tags
-FROM gradle:7.3.3-jdk17 AS build
+FROM gradle:jdk17-jammy AS build
 WORKDIR /app
 COPY build.gradle settings.gradle ./
 COPY gradle ./gradle

@@ -4,7 +4,7 @@ Build the image with:
 * ``docker build -t <YOUR_DOCKER_USR>/spring-web-demo .``
 
 Run a container of the imsge with:
-* ``docker run --name demo-app -e SOME_ENV_VAR='Docker FTW' -dp 8080:8080 <YOUR_DOCKER_USR>/spring-web-demo``
+* ``docker run --name spring-web-demo -e SOME_ENV_VAR='Docker FTW' -dp 8080:8080 <YOUR_DOCKER_USR>/spring-web-demo``
 
 Puch the image to Docker Hub:
 * ``docker push <YOUR_DOCKER_USR>/spring-web-demo``

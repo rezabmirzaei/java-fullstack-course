@@ -53,7 +53,7 @@ CMD ["java", "-jar", "demo.jar"]
 
 ## CI/CD with GitHub Actions
 
-The workflow is defined in [docker-image.yml](https://github.com/rezabmirzaei/java-fullstack-course/blob/main/spring-web-demo/.github/workflows/docker-image.yml). It will run automatically on every push to this branch.
+The workflow is defined in [docker-image.yml](https://github.com/rezabmirzaei/java-fullstack-course/blob/main/.github/workflows/spring-web-demo.yml). It will run automatically on every push to this branch.
 
 ### Setup
 
@@ -70,4 +70,15 @@ These values will be used in the automated workflow to build and push your image
 * Make a change in the API and push the changes to your repository.
 * In GitHub, in your repository for this project, monitor the build process under the _Actions_ tab.
 * When done, check your Docker Hub account under _Repositories_ and you should see a new image of this API.
+
+## Azure App Service
+
+* Log into your [Azure account](https://portal.azure.com/)
+* Create a [subscription](https://learn.microsoft.com/en-us/dynamics-nav/how-to--sign-up-for-a-microsoft-azure-subscription) and a [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal).
+* In your resource group, create an [App Service](https://learn.microsoft.com/en-us/azure/app-service/) on Linux for Docker Container.
+  * During setup, when you come to the "Docker" stage, point to your Docker Hub repository and Docker image. See [this video for a good demo](https://www.youtube.com/watch?v=_LNOg8kU4CE).
+  * Once set up and running, [enable contiuous deployment](https://learn.microsoft.com/en-us/azure/app-service/deploy-ci-cd-custom-container?tabs=acr&pivots=container-linux#4-enable-cicd) and [configure Docker Hub with the provided webhook](https://docs.docker.com/docker-hub/webhooks/).
+
+Friendly pointer: Choose **West Europe** as region if cost is an issue. Often the cheapest alternative. See [pricing calculator](https://azure.microsoft.com/en-us/pricing/details/app-service/linux/).
+
 

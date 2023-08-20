@@ -1,4 +1,4 @@
-## Simple demo of a dockerized Spring Boot REST API (w/Maven) and CI/CD using Github Actions
+## Simple demo of a dockerized Spring Boot REST API (w/Maven) and CI/CD using GitHub Actions
 
 ### Local setup
 

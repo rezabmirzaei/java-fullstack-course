@@ -13,7 +13,7 @@ Run a container of the imsge with:
 Puch the image to Docker Hub:
 * ``docker push <YOUR_DOCKER_USR>/spring-web-demo``
 
-For Gradle, replace _Stage 1_ in the provided Dockerfile with:
+For Gradle, replace _Stage 1_ in the provided [Dockerfile](https://github.com/rezabmirzaei/java-fullstack-course/blob/main/spring-web-demo/Dockerfile) with:
 ```
 ## Stage 1: Build the application using Gradle
 # https://hub.docker.com/_/gradle/tags

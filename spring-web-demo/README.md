@@ -1,4 +1,4 @@
-## Simple demo of a dockerized Spring Boot REST API and CI/CD using Github Actions
+## Simple demo of a dockerized Spring Boot REST API (w/Maven) and CI/CD using Github Actions
 
 ### Local setup
 
@@ -51,5 +51,23 @@ EXPOSE 8080
 CMD ["java", "-jar", "demo.jar"]
 ```
 
-### Automated build/push of image to Docker Hub
+## CI/CD with GitHub Actions
+
+The workflow is defined in [docker-image.yml](https://github.com/rezabmirzaei/java-fullstack-course/blob/main/spring-web-demo/.github/workflows/docker-image.yml). It will run automatically on every push to this branch.
+
+### Setup
+
+In you Docker Hub account, create an [access token](https://docs.docker.com/docker-hub/access-tokens/). Remember the value! You will need it when configuring the GitHub Actions workflow.
+
+In GitHub, in the repository for your API, under _Settings > Secrets and variables > Actions_; create two new secrets:
+* ``DOCKERHUB_USERNAME`` containing your Docker Hub username
+* ``DOCKERHUB_TOKEN`` containing the access token you created for you Docker Hub account
+
+These values will be used in the automated workflow to build and push your image to ``<DOCKERHUB_USERNAME>/spring-web-demo:latest``
+
+### Test build/push to Docker Hub
+
+* Make a change in the API and push the changes to your repository.
+* In GitHub, in your repository for this project, monitor the build process under the _Actions_ tab.
+* When done, check your Docker Hub account under _Repositories_ and you should see a new image of this API.
 

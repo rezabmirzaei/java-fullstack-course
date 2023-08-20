@@ -20,6 +20,6 @@ public class EnvTestController {
     @GetMapping
     public ResponseEntity<String> envVar() {
         logger.warn("Oh no! Someone is trying to read my env. var!");
-        return ResponseEntity.ok().body(someEnvVar);
+        return ResponseEntity.ok().body(String.format("The value of SOME_ENV_VAR: %s", someEnvVar));
     }
 }

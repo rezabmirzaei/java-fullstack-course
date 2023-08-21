@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Reading env. variables")
 @RestController
 @RequestMapping(path = "api/v1/test/env_var")
 public class EnvTestController {
@@ -20,6 +23,6 @@ public class EnvTestController {
     @GetMapping
     public ResponseEntity<String> envVar() {
         logger.warn("Oh no! Someone is trying to read my env. var!");
-        return ResponseEntity.ok().body(String.format("The value of SOME_ENV_VAR: %s", someEnvVar));
+        return ResponseEntity.ok().body(String.format("Reading SOME_ENV_VAR: %s", someEnvVar));
     }
 }

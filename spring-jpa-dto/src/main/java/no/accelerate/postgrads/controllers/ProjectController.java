@@ -39,17 +39,16 @@ public class ProjectController {
     })
     @GetMapping("{id}")
     public ResponseEntity<ProjectDTO> findById(@PathVariable int id) {
-        ProjectDTO proj = projectMapper.projectToProjectDto(
-                projectService.findById(id));
+        ProjectDTO proj = projectMapper.projectToProjectDto(projectService.findById(id));
         return ResponseEntity.ok(proj);
     }
 
     @PutMapping("{id}")
     public ResponseEntity<ProjectDTO> updateProject(@RequestBody ProjectDTO projectDTO, @PathVariable int id) {
-        if (id != projectDTO.getId())
+        if (id != projectDTO.getId()) {
             return ResponseEntity.notFound().build();
-        projectService.update(
-                projectMapper.projectDtoToProject(projectDTO));
+        }
+        projectService.update(projectMapper.projectDtoToProject(projectDTO));
         return ResponseEntity.noContent().build();
     }
 

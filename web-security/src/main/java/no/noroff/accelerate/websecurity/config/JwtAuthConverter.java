@@ -29,7 +29,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationToken> {
 
-    @Value("${client-id}")
+    @Value("${keycloak.client-id}")
     private String clientId;
 
     private final JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();

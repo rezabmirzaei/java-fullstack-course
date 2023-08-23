@@ -17,6 +17,15 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.stereotype.Component;
 
+/*
+ * Convert a JSON Web Token (JWT) into an authentication token that can be used for 
+ * authentication and authorization within a Spring-based application.
+ * 
+ * A bridge between the JWT-based authentication system and the Spring Security framework.
+ * Extracts relevant user roles and resource-specific roles from the JWT and constructs an 
+ * authentication token that can be utilized by Spring Security to make informed decisions 
+ * about authentication and authorization for the user.
+ */
 @Component
 public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationToken> {
 

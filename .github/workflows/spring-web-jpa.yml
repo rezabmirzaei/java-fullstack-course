@@ -1,4 +1,4 @@
-name: Docker Image CI - spring-web-jps
+name: Docker Image CI - spring-web-jpa
 
 on: push
 
